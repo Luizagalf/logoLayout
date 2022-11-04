@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { BrowserRouter } from "react-router-dom";
+import "./App.scss";
+import Header from "components/Header/index";
+import Footer from "components/Footer/index";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [selectedModule, setSelectedModule] = useState("Контакты");
+  const [selectedLanguage, setSelectedLanguage] = useState("ru");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <BrowserRouter>
+        <div>
+          <Header
+            selectedModule={selectedModule}
+            setSelectedModule={setSelectedModule}
+            selectedLanguage={selectedLanguage}
+            setSelectedLanguage={setSelectedLanguage}
+          />
+          <div className="app__main">
+            <div className="app__main__crumbs">
+              <p>Главная&nbsp;-</p>
+              <p>&nbsp;{selectedModule}</p>
+            </div>
+          </div>
+          <Footer
+            selectedModule={selectedModule}
+            setSelectedModule={setSelectedModule}
+            selectedLanguage={selectedLanguage}
+            setSelectedLanguage={setSelectedLanguage}
+          />
+        </div>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,38 @@
+@import "assets/styles/screen.scss";
+
+@mixin zero {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+@mixin logo {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 50px;
+  text-decoration: none;
+  color: $darkGray;
+}
+
+@mixin dots {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 4px;
+  width: 31px;
+  cursor: pointer;
+
+  & > div {
+    width: 7px;
+    height: 7px;
+    border-radius: 6px;
+    background-color: $blue;
+  }
+
+  &:hover {
+    & > div {
+      transition: all 0.4s ease;
+      filter: brightness(0) saturate(100%) invert(11%) sepia(8%) saturate(14%)
+        hue-rotate(5deg) brightness(93%) contrast(78%);
+    }
+  }
+}

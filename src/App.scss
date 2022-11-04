@@ -1,0 +1,22 @@
+@import "src/assets/styles/main.scss";
+
+.app {
+  height: 100vh;
+}
+
+.app__main {
+  padding: 147px 50px;
+}
+
+.app__main__crumbs {
+  display: flex;
+  & > p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: $darkGray;
+  }
+  & > p:nth-child(2) {
+    font-weight: 500;
+  }
+}

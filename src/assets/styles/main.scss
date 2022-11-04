@@ -1,0 +1,17 @@
+@import "assets/styles/colors.scss";
+@import "assets/styles/mixins.scss";
+@import "assets/styles/screen.scss";
+@import "assets/fonts/stylesheet.scss";
+@import "~bootstrap/scss/bootstrap";
+
+button,
+input,
+div {
+  &:focus,
+  &:active,
+  &:active:focus,
+  &:focus:active,
+  &:visited {
+    outline: 0;
+  }
+}

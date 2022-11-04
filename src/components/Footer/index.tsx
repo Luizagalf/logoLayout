@@ -1,0 +1,112 @@
+import "./footer.scss";
+import { NavLink } from "react-router-dom";
+import arrow from "assets/images/arrow.svg";
+import whatsapp from "assets/images/whatsapp.svg";
+import telegram from "assets/images/telegram.svg";
+
+// import Tooltip from "sharedComponents/Tooltip";
+
+type FooterProps = {
+  selectedModule: string;
+  setSelectedModule: (el: string) => void;
+  selectedLanguage: string;
+  setSelectedLanguage: (el: string) => void;
+};
+
+const Footer = ({
+  selectedModule,
+  setSelectedModule,
+  selectedLanguage,
+  setSelectedLanguage
+}: FooterProps) => {
+  return (
+    <footer className="footer">
+      <div>
+        <div className="footer__middle">
+          <NavLink to="/">LOGO</NavLink>
+          <div className="middle__block">
+            <div className="middle__block__col">
+              <h3>
+                <p>Услуги</p>
+                <div />
+              </h3>
+              <NavLink
+                to="/"
+                className="middle__block__item"
+                onClick={() => setSelectedModule("projects")}
+              >
+                Support and development
+              </NavLink>
+              <NavLink
+                to="/"
+                className="middle__block__item"
+                onClick={() => setSelectedModule("aboutcompany")}
+              >
+                UI/UX and product design
+              </NavLink>
+              <NavLink
+                to="/"
+                className="middle__block__item"
+                onClick={() => setSelectedModule("contacts")}
+              >
+                Progressive Web Applications (PWA)
+              </NavLink>
+            </div>
+            <div className="middle__block__col">
+              <h3>
+                Компания
+                <div />
+              </h3>
+              <NavLink
+                to="/projects"
+                className="middle__block__item"
+                onClick={() => setSelectedModule("projects")}
+              >
+                Проекты
+              </NavLink>
+              <NavLink
+                to="/aboutcompany"
+                className="middle__block__item"
+                onClick={() => setSelectedModule("aboutcompany")}
+              >
+                О компании
+              </NavLink>
+              <NavLink
+                to="/contacts"
+                className="middle__block__item"
+                onClick={() => setSelectedModule("contacts")}
+              >
+                Контакты
+              </NavLink>
+            </div>
+            <div className="middle__block__col">
+              <h3>
+                Контакты
+                <div />
+              </h3>
+              <div className="middle__block__row">
+                <div className="middle__block__col">
+                  <NavLink to="/" className="middle__block__item">
+                    Скачать презентацию <img src={arrow} alt="" />
+                  </NavLink>
+                  <p className="middle__block__item">+7 (499) 999-99-99</p>
+                  <p className="middle__block__item">info@site.com</p>
+                </div>
+                <div className="middle__block__col">
+                  <img src={telegram} alt="Telegram" />
+                  <img src={whatsapp} alt="WhatAapp" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="footer__end">
+          <p>© Company 2022. All rights reserved.</p>
+          <NavLink to="/">Политика конфиденциальночти</NavLink>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
