@@ -33,21 +33,23 @@ const Footer = ({
               <NavLink
                 to="/"
                 className="middle__block__item"
-                onClick={() => setSelectedModule("projects")}
+                onClick={() => setSelectedModule("Support and development")}
               >
                 Support and development
               </NavLink>
               <NavLink
                 to="/"
                 className="middle__block__item"
-                onClick={() => setSelectedModule("aboutcompany")}
+                onClick={() => setSelectedModule("UI/UX and product design")}
               >
                 UI/UX and product design
               </NavLink>
               <NavLink
                 to="/"
                 className="middle__block__item"
-                onClick={() => setSelectedModule("contacts")}
+                onClick={() =>
+                  setSelectedModule("Progressive Web Applications (PWA)")
+                }
               >
                 Progressive Web Applications (PWA)
               </NavLink>
@@ -60,21 +62,21 @@ const Footer = ({
               <NavLink
                 to="/projects"
                 className="middle__block__item"
-                onClick={() => setSelectedModule("projects")}
+                onClick={() => setSelectedModule("Проекты")}
               >
                 Проекты
               </NavLink>
               <NavLink
                 to="/aboutcompany"
                 className="middle__block__item"
-                onClick={() => setSelectedModule("aboutcompany")}
+                onClick={() => setSelectedModule("О компании")}
               >
                 О компании
               </NavLink>
               <NavLink
                 to="/contacts"
                 className="middle__block__item"
-                onClick={() => setSelectedModule("contacts")}
+                onClick={() => setSelectedModule("Контакты")}
               >
                 Контакты
               </NavLink>

@@ -25,7 +25,7 @@ const Header = ({
           className={`item ${
             selectedModule === "Проекты" ? "item__selected" : ""
           }`}
-          onClick={() => setSelectedModule("projects")}
+          onClick={() => setSelectedModule("Проекты")}
         >
           <p>Проекты</p>
           <div />
@@ -35,7 +35,7 @@ const Header = ({
           className={`item ${
             selectedModule === "О компании" ? "item__selected" : ""
           }`}
-          onClick={() => setSelectedModule("aboutcompany")}
+          onClick={() => setSelectedModule("О компании")}
         >
           <p>О компании</p>
           <div />
@@ -45,7 +45,7 @@ const Header = ({
           className={`item ${
             selectedModule === "Контакты" ? "item__selected" : ""
           }`}
-          onClick={() => setSelectedModule("contacts")}
+          onClick={() => setSelectedModule("Контакты")}
         >
           <p>Контакты</p>
           <div />
@@ -76,7 +76,7 @@ const Header = ({
             <div></div>
           </div>
         </div>
-        <NavLink to="/projects" className="header__end_link">
+        <NavLink to="/" className="header__end_link">
           Начать проект
           <img src={arrow} alt="" />
         </NavLink>

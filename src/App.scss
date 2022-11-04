@@ -5,11 +5,20 @@
 }
 
 .app__main {
-  padding: 147px 50px;
+  display: flex;
+  align-items: center;
+  gap: 277px;
+  padding: 100px 50px 162px;
+  min-height: calc(100vh - 428px);
+}
+
+.app__main__dots {
+  @include dots;
 }
 
 .app__main__crumbs {
   display: flex;
+  padding-bottom: 61px;
   & > p {
     font-weight: 300;
     font-size: 18px;
@@ -18,5 +27,21 @@
   }
   & > p:nth-child(2) {
     font-weight: 500;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .app__main {
+    padding: 75px 42px 100px;
+  }
+
+  .app__main__dots {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $phone) {
+  .app__main {
+    padding: 33px 40px 100px;
   }
 }

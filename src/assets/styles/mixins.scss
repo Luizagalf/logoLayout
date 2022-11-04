@@ -36,3 +36,10 @@
     }
   }
 }
+
+@mixin bitTitel {
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 120px;
+  color: $blue;
+}

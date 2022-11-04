@@ -66,7 +66,7 @@
   line-height: 19px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: $lightGray;
+  color: $brightGray;
   cursor: pointer;
 
   & > p {
@@ -113,12 +113,25 @@
 }
 
 @media screen and (max-width: $tablet) {
+  .header {
+    padding: 34px 42px;
+  }
+
   .header__middle {
     display: none;
   }
 }
 
 @media screen and (max-width: $phone) {
+  .header {
+    padding: 29px 40px;
+
+    & > a:first-child {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+
   .header__end {
     display: none;
   }

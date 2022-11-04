@@ -118,6 +118,7 @@ a.middle__block__item {
 
 @media screen and (max-width: $tablet) {
   .footer {
+    padding: 38px 40px 26px 72px;
     & > div {
       gap: 126px;
     }
@@ -125,6 +126,9 @@ a.middle__block__item {
 }
 
 @media screen and (max-width: 840px) {
+  .footer {
+    padding: 51px 40px 0px 21px;
+  }
   .middle__block {
     column-gap: 20px;
   }

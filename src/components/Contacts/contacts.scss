@@ -1,0 +1,60 @@
+@import "src/assets/styles/main.scss";
+
+.contacts {
+  & > h1 {
+    @include bitTitel;
+  }
+  & > p {
+    max-width: 542px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: $darkGray;
+    margin: 0;
+
+    & > mark {
+      font-weight: 700;
+      color: $blue;
+      background-color: transparent;
+    }
+  }
+}
+
+.contacts__main {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 174px;
+  row-gap: 62px;
+  padding-top: 120px;
+}
+
+@media screen and (max-width: $tablet) {
+  .contacts {
+    & > h1 {
+      font-size: 60px;
+    }
+    & > p {
+      font-size: 16px;
+    }
+  }
+
+  .contacts__main {
+    padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: $phone) {
+  .contacts {
+    & > h1 {
+      font-size: 40px;
+      line-height: 40px;
+    }
+    & > p {
+      font-size: 16px;
+    }
+  }
+
+  .contacts__main {
+    padding-top: 80px;
+  }
+}

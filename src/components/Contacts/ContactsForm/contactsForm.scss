@@ -1,0 +1,109 @@
+@import "src/assets/styles/main.scss";
+
+.contacts__form {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  & > div:first-child {
+    display: flex;
+    row-gap: 60px;
+    column-gap: 20px;
+  }
+}
+
+.form-control,
+.form-control.is-invalid {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #e2e2e2;
+
+  &:active,
+  &:hover,
+  &:focus {
+    padding-left: 0 !important;
+    padding-bottom: 0;
+
+    box-shadow: none !important;
+    border-bottom: 1px solid #e2e2e2 !important;
+  }
+}
+
+.form-floating > textarea {
+  resize: none;
+}
+
+.form-floating > .form-control {
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.form-floating > label {
+  padding-left: 0 !important;
+  margin-bottom: 9px;
+}
+
+.input__label,
+.input__placeholder {
+  font-weight: 300;
+  color: #d3d3d3;
+  margin: 0;
+
+  & > mark {
+    color: red;
+    background-color: transparent;
+  }
+}
+
+.input__label {
+  font-size: 26px;
+  line-height: 31px;
+}
+
+.input__placeholder {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.input__radio {
+  display: flex;
+
+  & > input {
+    position: relative;
+    display: grid;
+    place-content: center;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d3d3d3;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:checked {
+      &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: $blue;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  & > label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: $darkGray;
+    padding-left: 20px;
+
+    & > a {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+}

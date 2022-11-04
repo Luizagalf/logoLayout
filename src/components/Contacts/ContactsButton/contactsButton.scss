@@ -1,0 +1,6 @@
+@import "src/assets/styles/main.scss";
+
+.contacts__btn {
+  text-align: center;
+  @include bitTitel;
+}
