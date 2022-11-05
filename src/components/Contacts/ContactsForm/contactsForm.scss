@@ -7,6 +7,7 @@
 
   & > div:first-child {
     display: flex;
+    flex-wrap: wrap;
     row-gap: 60px;
     column-gap: 20px;
   }
@@ -17,13 +18,12 @@
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #e2e2e2;
+  padding-left: 1px !important;
+  font-size: 20px;
 
   &:active,
   &:hover,
   &:focus {
-    padding-left: 0 !important;
-    padding-bottom: 0;
-
     box-shadow: none !important;
     border-bottom: 1px solid #e2e2e2 !important;
   }
@@ -33,21 +33,19 @@
   resize: none;
 }
 
-.form-floating > .form-control {
-  padding-bottom: 0;
-  padding-left: 0;
+.form-floating > label {
+  margin-left: -13px;
 }
 
-.form-floating > label {
-  padding-left: 0 !important;
-  margin-bottom: 9px;
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  margin-top: -10px !important;
 }
 
 .input__label,
 .input__placeholder {
   font-weight: 300;
-  color: #d3d3d3;
-  margin: 0;
+  color: $lightGray;
 
   & > mark {
     color: red;

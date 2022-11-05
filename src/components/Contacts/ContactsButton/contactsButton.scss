@@ -2,5 +2,42 @@
 
 .contacts__btn {
   text-align: center;
-  @include bitTitel;
+  width: 227px;
+  height: 227px;
+  display: table-cell;
+  vertical-align: middle;
+
+  position: relative;
+  padding: 15px 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    background: linear-gradient(93.29deg, #388af3 21.04%, #a483e2 88.77%)
+      border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+
+  & > div {
+    & > img {
+      display: none;
+    }
+
+    & > p {
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 20px;
+      margin: 0;
+      color: $blue;
+    }
+  }
 }
