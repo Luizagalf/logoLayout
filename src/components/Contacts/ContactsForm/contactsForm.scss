@@ -79,8 +79,9 @@
 
 .input__radio {
   display: flex;
+  align-items: center;
 
-  & > input {
+  & > div > input {
     position: relative;
     display: grid;
     place-content: center;

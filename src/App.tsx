@@ -37,12 +37,7 @@ const App = () => {
               </Routes>
             </div>
           </div>
-          <Footer
-            selectedModule={selectedModule}
-            setSelectedModule={setSelectedModule}
-            selectedLanguage={selectedLanguage}
-            setSelectedLanguage={setSelectedLanguage}
-          />
+          <Footer setSelectedModule={setSelectedModule} />
         </div>
       </BrowserRouter>
     </div>

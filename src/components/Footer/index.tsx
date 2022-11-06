@@ -4,21 +4,11 @@ import arrow from "assets/images/arrow.svg";
 import whatsapp from "assets/images/whatsapp.svg";
 import telegram from "assets/images/telegram.svg";
 
-// import Tooltip from "sharedComponents/Tooltip";
-
 type FooterProps = {
-  selectedModule: string;
   setSelectedModule: (el: string) => void;
-  selectedLanguage: string;
-  setSelectedLanguage: (el: string) => void;
 };
 
-const Footer = ({
-  selectedModule,
-  setSelectedModule,
-  selectedLanguage,
-  setSelectedLanguage
-}: FooterProps) => {
+const Footer = ({ setSelectedModule }: FooterProps) => {
   return (
     <footer className="footer">
       <div>

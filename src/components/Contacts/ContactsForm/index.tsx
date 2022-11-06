@@ -117,14 +117,16 @@ const ContactsForm = () => {
             </FloatingLabel>
 
             <div className="input__radio">
-              <Field
-                type="radio"
-                name="confirm"
-                value={values.confirm}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                checked={values.confirm ? true : false}
-              />
+              <div>
+                <Field
+                  type="radio"
+                  name="confirm"
+                  value={values.confirm}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  checked={values.confirm ? true : false}
+                />
+              </div>
               <label>
                 Согласен с{" "}
                 <a href="/" target="_blank" rel="noreferrer">
