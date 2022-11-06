@@ -36,21 +36,17 @@
   }
 
   & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     cursor: pointer;
-
-    // & > canvas {
-    // width: 57px;
-    // height: 41.17px;
-    // }
-
-    & > img {
-      display: none;
-    }
 
     & > p {
       font-weight: 800;
@@ -59,5 +55,15 @@
       margin: 0;
       color: $blue;
     }
+  }
+}
+
+.isDone {
+  &::before {
+    background: $blue;
+    -webkit-mask: none;
+  }
+  & > div > p {
+    color: white;
   }
 }
