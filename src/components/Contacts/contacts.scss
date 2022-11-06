@@ -20,14 +20,6 @@
   }
 }
 
-.contacts__main {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 174px;
-  row-gap: 62px;
-  padding-top: 120px;
-}
-
 @media screen and (max-width: $tablet) {
   .contacts {
     & > h1 {
@@ -36,10 +28,6 @@
     & > p {
       font-size: 16px;
     }
-  }
-
-  .contacts__main {
-    padding-top: 100px;
   }
 }
 
@@ -52,9 +40,5 @@
     & > p {
       font-size: 16px;
     }
-  }
-
-  .contacts__main {
-    padding-top: 80px;
   }
 }

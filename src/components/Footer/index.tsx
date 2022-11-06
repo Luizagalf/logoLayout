@@ -23,7 +23,9 @@ const Footer = ({
     <footer className="footer">
       <div>
         <div className="footer__middle">
-          <NavLink to="/">LOGO</NavLink>
+          <NavLink to="/" onClick={() => setSelectedModule("")}>
+            LOGO
+          </NavLink>
           <div className="middle__block">
             <div className="middle__block__col">
               <h3>
@@ -88,7 +90,11 @@ const Footer = ({
               </h3>
               <div className="middle__block__row">
                 <div className="middle__block__col">
-                  <NavLink to="/" className="middle__block__item">
+                  <NavLink
+                    to="/"
+                    className="middle__block__item"
+                    onClick={() => setSelectedModule("")}
+                  >
                     Скачать презентацию <img src={arrow} alt="" />
                   </NavLink>
                   <p className="middle__block__item">+7 (499) 999-99-99</p>
@@ -104,7 +110,9 @@ const Footer = ({
         </div>
         <div className="footer__end">
           <p>© Company 2022. All rights reserved.</p>
-          <NavLink to="/">Политика конфиденциальночти</NavLink>
+          <NavLink to="/" onClick={() => setSelectedModule("")}>
+            Политика конфиденциальночти
+          </NavLink>
         </div>
       </div>
     </footer>

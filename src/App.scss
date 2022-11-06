@@ -12,6 +12,10 @@
   gap: 277px;
   padding: 100px 50px 162px;
   min-height: calc(100vh - 428px);
+
+  & > div:nth-child(2) {
+    width: 100%;
+  }
 }
 
 .app__main__dots {
@@ -28,7 +32,7 @@
     color: $darkGray;
   }
   & > p:nth-child(2) {
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 
@@ -40,10 +44,24 @@
   .app__main__dots {
     display: none;
   }
+
+  .app__main__crumbs {
+    & > p {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
 }
 
 @media screen and (max-width: $phone) {
   .app__main {
     padding: 33px 40px 100px;
+  }
+
+  .app__main__crumbs {
+    & > p {
+      font-size: 12px;
+      line-height: 14px;
+    }
   }
 }

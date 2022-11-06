@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Header from "components/Header";
@@ -29,15 +28,13 @@ const App = () => {
             </div>
             <div>
               <div className="app__main__crumbs">
-                <p>Главная&nbsp;-</p>
-                <p>&nbsp;{selectedModule}</p>
+                <p>Главная</p>
+                {selectedModule ? <p>&nbsp;-&nbsp;{selectedModule}</p> : ""}
               </div>
-              <div>
-                <Routes>
-                  <Route index path="/contacts" element={<Contacts />} />
-                  <Route path="*" element={<Error />} />
-                </Routes>
-              </div>
+              <Routes>
+                <Route index path="/contacts" element={<Contacts />} />
+                <Route path="*" element={<Error />} />
+              </Routes>
             </div>
           </div>
           <Footer

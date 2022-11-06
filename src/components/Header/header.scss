@@ -34,7 +34,6 @@
   line-height: 21px;
   text-decoration: none;
   color: $gray;
-  transition: all 0.4s ease;
 
   & > p {
     @include zero;
@@ -55,7 +54,6 @@
   }
 
   &:hover {
-    transition: all 0.4s ease;
     color: $blue;
   }
 }
@@ -88,7 +86,6 @@
   }
 
   &:hover {
-    transition: all 0.4s ease;
     color: $blue;
   }
 }

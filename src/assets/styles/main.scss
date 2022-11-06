@@ -15,6 +15,14 @@ div {
     outline: 0;
   }
 }
+a {
+  transition: all 0.4s ease;
+
+  &:hover {
+    transition: all 0.4s ease;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }

@@ -1,7 +1,6 @@
 import "./header.scss";
 import { NavLink } from "react-router-dom";
 import arrow from "assets/images/arrow.svg";
-// import Tooltip from "sharedComponents/Tooltip";
 
 type HeaderProps = {
   selectedModule: string;
@@ -18,7 +17,9 @@ const Header = ({
 }: HeaderProps) => {
   return (
     <header className="header">
-      <NavLink to="/">LOGO</NavLink>
+      <NavLink to="/" onClick={() => setSelectedModule("")}>
+        LOGO
+      </NavLink>
       <div className="header__middle">
         <NavLink
           to="/projects"
@@ -76,7 +77,11 @@ const Header = ({
             <div></div>
           </div>
         </div>
-        <NavLink to="/" className="header__end_link">
+        <NavLink
+          to="/"
+          className="header__end_link"
+          onClick={() => setSelectedModule("")}
+        >
           Начать проект
           <img src={arrow} alt="" />
         </NavLink>

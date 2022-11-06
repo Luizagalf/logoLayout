@@ -4,8 +4,6 @@
   text-align: center;
   width: 227px;
   height: 227px;
-  display: table-cell;
-  vertical-align: middle;
 
   position: relative;
   padding: 15px 20px;
@@ -27,7 +25,29 @@
     mask-composite: exclude;
   }
 
+  &:hover {
+    &::before {
+      background: $blue;
+      -webkit-mask: none;
+    }
+    & > div > p {
+      color: white;
+    }
+  }
+
   & > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+
+    // & > canvas {
+    // width: 57px;
+    // height: 41.17px;
+    // }
+
     & > img {
       display: none;
     }
