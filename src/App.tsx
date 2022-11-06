@@ -33,6 +33,7 @@ const App = () => {
               </div>
               <Routes>
                 <Route index path="/contacts" element={<Contacts />} />
+                <Route index path="/" element={<Contacts />} />
                 <Route path="*" element={<Error />} />
               </Routes>
             </div>

@@ -13,7 +13,7 @@ const Footer = ({ setSelectedModule }: FooterProps) => {
     <footer className="footer">
       <div>
         <div className="footer__middle">
-          <NavLink to="/" onClick={() => setSelectedModule("")}>
+          <NavLink to="/main" onClick={() => setSelectedModule("")}>
             LOGO
           </NavLink>
           <div className="middle__block">
@@ -23,21 +23,21 @@ const Footer = ({ setSelectedModule }: FooterProps) => {
                 <div />
               </h3>
               <NavLink
-                to="/"
+                to="/main"
                 className="middle__block__item"
                 onClick={() => setSelectedModule("Support and development")}
               >
                 Support and development
               </NavLink>
               <NavLink
-                to="/"
+                to="/main"
                 className="middle__block__item"
                 onClick={() => setSelectedModule("UI/UX and product design")}
               >
                 UI/UX and product design
               </NavLink>
               <NavLink
-                to="/"
+                to="/main"
                 className="middle__block__item"
                 onClick={() =>
                   setSelectedModule("Progressive Web Applications (PWA)")
@@ -81,7 +81,7 @@ const Footer = ({ setSelectedModule }: FooterProps) => {
               <div className="middle__block__row">
                 <div className="middle__block__col">
                   <NavLink
-                    to="/"
+                    to="/main"
                     className="middle__block__item"
                     onClick={() => setSelectedModule("")}
                   >
@@ -100,7 +100,7 @@ const Footer = ({ setSelectedModule }: FooterProps) => {
         </div>
         <div className="footer__end">
           <p>© Company 2022. All rights reserved.</p>
-          <NavLink to="/" onClick={() => setSelectedModule("")}>
+          <NavLink to="/main" onClick={() => setSelectedModule("")}>
             Политика конфиденциальночти
           </NavLink>
         </div>

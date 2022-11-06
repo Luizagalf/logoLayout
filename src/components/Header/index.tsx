@@ -17,7 +17,7 @@ const Header = ({
 }: HeaderProps) => {
   return (
     <header className="header">
-      <NavLink to="/" onClick={() => setSelectedModule("")}>
+      <NavLink to="/main" onClick={() => setSelectedModule("")}>
         LOGO
       </NavLink>
       <div className="header__middle">
@@ -78,7 +78,7 @@ const Header = ({
           </div>
         </div>
         <NavLink
-          to="/"
+          to="/main"
           className="header__end_link"
           onClick={() => setSelectedModule("")}
         >
