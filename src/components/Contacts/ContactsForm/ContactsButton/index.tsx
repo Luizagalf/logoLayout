@@ -29,7 +29,7 @@ const ContactsButton = ({
 
     ticks++;
     acceleration += 0.02;
-    textAcceleration += 0.003;
+    textAcceleration += 0.0035;
 
     animationInProgress = true;
     if (ticks < 35) {

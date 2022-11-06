@@ -8,31 +8,19 @@
   position: relative;
   padding: 15px 20px;
 
-  &::before {
-    content: "";
+  --b: 5px;
+  display: inline-block;
+  margin: 10px;
+  z-index: 0;
+
+  & > div,
+  & > div:before {
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    border-radius: 50%;
-    border: 5px solid transparent;
-    background: linear-gradient(93.29deg, #388af3 21.04%, #a483e2 88.77%)
-      border-box;
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-  }
-
-  &:hover {
-    &::before {
-      background: $blue;
-      -webkit-mask: none;
-    }
-    & > div > p {
-      color: white;
-    }
   }
 
   & > div {
@@ -41,13 +29,7 @@
     align-items: center;
     justify-content: center;
     gap: 25px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     cursor: pointer;
-
     & > p {
       font-weight: 800;
       font-size: 20px;
@@ -55,11 +37,37 @@
       margin: 0;
       color: $blue;
     }
+
+    &:hover {
+      &::before {
+        background: $blue;
+        -webkit-mask: none;
+      }
+      & > p {
+        color: white;
+      }
+    }
+  }
+
+  & > div:before {
+    content: "";
+    background: var(
+      --c,
+      linear-gradient(93.29deg, #388af3 21.04%, #a483e2 88.77%)
+    );
+    -webkit-mask: radial-gradient(
+        farthest-side,
+        transparent calc(100% - var(--b) - 1px),
+        #fff calc(100% - var(--b))
+      )
+      content-box;
+    border-radius: 50%;
+    padding: 1px;
   }
 }
 
 .isDone {
-  &::before {
+  > div:before {
     background: $blue;
     -webkit-mask: none;
   }
