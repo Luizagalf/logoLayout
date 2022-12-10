@@ -1,7 +1,7 @@
 import "./contacts.scss";
 import ContactsForm from "./ContactsForm";
 
-const Contacts = () => {
+const Contacts = (): JSX.Element => {
   return (
     <div className="contacts">
       <h1>Мы рядом</h1>

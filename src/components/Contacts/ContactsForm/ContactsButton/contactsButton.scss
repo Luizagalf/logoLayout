@@ -30,6 +30,7 @@
     justify-content: center;
     gap: 25px;
     cursor: pointer;
+
     & > p {
       font-weight: 800;
       font-size: 20px;
@@ -64,14 +65,21 @@
     border-radius: 50%;
     padding: 1px;
   }
+
+  &--isDone {
+    > div:before {
+      background: $blue;
+      -webkit-mask: none;
+    }
+    & > div > p {
+      color: white;
+    }
+  }
 }
 
-.isDone {
-  > div:before {
-    background: $blue;
-    -webkit-mask: none;
-  }
-  & > div > p {
-    color: white;
+@media screen and (max-width: $phone) {
+  .contacts__btn {
+    width: 180px;
+    height: 180px;
   }
 }

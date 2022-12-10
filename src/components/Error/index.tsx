@@ -1,6 +1,6 @@
 import "./error.scss";
 
-const Error = () => {
+const Error = (): JSX.Element => {
   return <h1 className="error">Страница находится в разрабтке</h1>;
 };
 

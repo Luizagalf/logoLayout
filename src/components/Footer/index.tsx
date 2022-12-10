@@ -8,37 +8,38 @@ type FooterProps = {
   setSelectedModule: (el: string) => void;
 };
 
-const Footer = ({ setSelectedModule }: FooterProps) => {
+const Footer = ({ setSelectedModule }: FooterProps): JSX.Element => {
   return (
     <footer className="footer">
       <div>
         <div className="footer__middle">
-          <NavLink to="/main" onClick={() => setSelectedModule("")}>
+          <NavLink to="/main" onClick={(): void => setSelectedModule("")}>
             LOGO
           </NavLink>
-          <div className="middle__block">
-            <div className="middle__block__col">
-              <h3>
-                <p>Услуги</p>
-                <div />
-              </h3>
+          <div className="footer__block">
+            <div className="footer__col">
+              <h3>Услуги</h3>
               <NavLink
                 to="/main"
-                className="middle__block__item"
-                onClick={() => setSelectedModule("Support and development")}
+                className="footer__item"
+                onClick={(): void =>
+                  setSelectedModule("Support and development")
+                }
               >
                 Support and development
               </NavLink>
               <NavLink
                 to="/main"
-                className="middle__block__item"
-                onClick={() => setSelectedModule("UI/UX and product design")}
+                className="footer__item"
+                onClick={(): void =>
+                  setSelectedModule("UI/UX and product design")
+                }
               >
                 UI/UX and product design
               </NavLink>
               <NavLink
                 to="/main"
-                className="middle__block__item"
+                className="footer__item"
                 onClick={() =>
                   setSelectedModule("Progressive Web Applications (PWA)")
                 }
@@ -46,51 +47,51 @@ const Footer = ({ setSelectedModule }: FooterProps) => {
                 Progressive Web Applications (PWA)
               </NavLink>
             </div>
-            <div className="middle__block__col">
+            <div className="footer__col">
               <h3>
                 Компания
                 <div />
               </h3>
               <NavLink
                 to="/projects"
-                className="middle__block__item"
-                onClick={() => setSelectedModule("Проекты")}
+                className="footer__item"
+                onClick={(): void => setSelectedModule("Проекты")}
               >
                 Проекты
               </NavLink>
               <NavLink
                 to="/aboutcompany"
-                className="middle__block__item"
-                onClick={() => setSelectedModule("О компании")}
+                className="footer__item"
+                onClick={(): void => setSelectedModule("О компании")}
               >
                 О компании
               </NavLink>
               <NavLink
                 to="/contacts"
-                className="middle__block__item"
-                onClick={() => setSelectedModule("Контакты")}
+                className="footer__item"
+                onClick={(): void => setSelectedModule("Контакты")}
               >
                 Контакты
               </NavLink>
             </div>
-            <div className="middle__block__col">
+            <div className="footer__col">
               <h3>
                 Контакты
                 <div />
               </h3>
-              <div className="middle__block__row">
-                <div className="middle__block__col">
+              <div className="footer__row">
+                <div className="footer__col">
                   <NavLink
                     to="/main"
-                    className="middle__block__item"
-                    onClick={() => setSelectedModule("")}
+                    className="footer__item"
+                    onClick={(): void => setSelectedModule("")}
                   >
                     Скачать презентацию <img src={arrow} alt="" />
                   </NavLink>
-                  <p className="middle__block__item">+7 (499) 999-99-99</p>
-                  <p className="middle__block__item">info@site.com</p>
+                  <p className="footer__item">+7 (499) 999-99-99</p>
+                  <p className="footer__item">info@site.com</p>
                 </div>
-                <div className="middle__block__col">
+                <div className="footer__col">
                   <img src={telegram} alt="Telegram" />
                   <img src={whatsapp} alt="WhatAapp" />
                 </div>
@@ -100,7 +101,7 @@ const Footer = ({ setSelectedModule }: FooterProps) => {
         </div>
         <div className="footer__end">
           <p>© Company 2022. All rights reserved.</p>
-          <NavLink to="/main" onClick={() => setSelectedModule("")}>
+          <NavLink to="/main" onClick={(): void => setSelectedModule("")}>
             Политика конфиденциальночти
           </NavLink>
         </div>

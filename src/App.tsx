@@ -6,9 +6,9 @@ import Error from "components/Error";
 import Contacts from "components/Contacts";
 import { useState } from "react";
 
-const App = () => {
-  const [selectedModule, setSelectedModule] = useState("Контакты");
-  const [selectedLanguage, setSelectedLanguage] = useState("ru");
+const App = (): JSX.Element => {
+  const [selectedModule, setSelectedModule] = useState<string>("Контакты");
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("ru");
 
   return (
     <div className="app">

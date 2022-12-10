@@ -1,5 +1,19 @@
 @import "src/assets/styles/main.scss";
 
 .error {
-  @include bitTitel;
+  @include bigTitel;
+}
+
+@media screen and (max-width: $tablet) {
+  .error {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+@media screen and (max-width: $phone) {
+  .error {
+    font-size: 25px;
+    line-height: 30px;
+  }
 }

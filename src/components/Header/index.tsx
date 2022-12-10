@@ -14,39 +14,39 @@ const Header = ({
   setSelectedModule,
   selectedLanguage,
   setSelectedLanguage
-}: HeaderProps) => {
+}: HeaderProps): JSX.Element => {
   return (
     <header className="header">
-      <NavLink to="/main" onClick={() => setSelectedModule("")}>
+      <NavLink to="/main" onClick={(): void => setSelectedModule("")}>
         LOGO
       </NavLink>
       <div className="header__middle">
         <NavLink
           to="/projects"
-          className={`item ${
-            selectedModule === "Проекты" ? "item__selected" : ""
+          className={`header__item ${
+            selectedModule === "Проекты" ? "header__item--selected" : ""
           }`}
-          onClick={() => setSelectedModule("Проекты")}
+          onClick={(): void => setSelectedModule("Проекты")}
         >
           <p>Проекты</p>
           <div />
         </NavLink>
         <NavLink
           to="/aboutcompany"
-          className={`item ${
-            selectedModule === "О компании" ? "item__selected" : ""
+          className={`header__item ${
+            selectedModule === "О компании" ? "header__item--selected" : ""
           }`}
-          onClick={() => setSelectedModule("О компании")}
+          onClick={(): void => setSelectedModule("О компании")}
         >
           <p>О компании</p>
           <div />
         </NavLink>
         <NavLink
           to="/contacts"
-          className={`item ${
-            selectedModule === "Контакты" ? "item__selected" : ""
+          className={`header__item ${
+            selectedModule === "Контакты" ? "header__item--selected" : ""
           }`}
-          onClick={() => setSelectedModule("Контакты")}
+          onClick={(): void => setSelectedModule("Контакты")}
         >
           <p>Контакты</p>
           <div />
@@ -55,22 +55,22 @@ const Header = ({
       <div className="header__end">
         <div>
           <div
-            onClick={() => {
+            onClick={(): void => {
               setSelectedLanguage("ru");
             }}
-            className={`smallItem ${
-              selectedLanguage === "ru" ? "smallItem__selected" : ""
+            className={`header__smallItem ${
+              selectedLanguage === "ru" ? "header__smallItem--selected" : ""
             }`}
           >
             <p>RU</p>
             <div></div>
           </div>
           <div
-            onClick={() => {
+            onClick={(): void => {
               setSelectedLanguage("en");
             }}
-            className={`smallItem ${
-              selectedLanguage === "en" ? "smallItem__selected" : ""
+            className={`header__smallItem ${
+              selectedLanguage === "en" ? "header__smallItem--selected" : ""
             }`}
           >
             <p>EN</p>
@@ -79,14 +79,14 @@ const Header = ({
         </div>
         <NavLink
           to="/main"
-          className="header__end_link"
-          onClick={() => setSelectedModule("")}
+          className="header__link"
+          onClick={(): void => setSelectedModule("")}
         >
           Начать проект
           <img src={arrow} alt="" />
         </NavLink>
       </div>
-      <div className="header__end__mob">
+      <div className="header__end--mob">
         <div />
         <div />
         <div />

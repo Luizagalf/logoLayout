@@ -1,35 +1,41 @@
 import "./contactsButton.scss";
 import plane from "assets/images/plane.svg";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 type ContactsButtonType = {
   action: () => void;
-  isTouchedForm: boolean;
+  isTouched: boolean;
   dirty: boolean;
   isValid: boolean;
 };
 
 const ContactsButton = ({
   action,
-  isTouchedForm,
+  isTouched,
   dirty,
   isValid
-}: ContactsButtonType) => {
+}: ContactsButtonType): JSX.Element => {
+  const [isClicked, setIsClicked] = useState<boolean>(false);
   const imageRef = useRef<HTMLImageElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
 
-  let ticks = 0;
-  let acceleration = 1;
-  let textAcceleration = 1;
-  let animationInProgress = false;
+  useEffect((): void => {
+    leave();
+    setIsClicked(false);
+  }, [isTouched]);
 
-  const hover = () => {
-    const img = imageRef.current as HTMLElement;
-    const text = textRef.current as HTMLElement;
+  let ticks: number = 0;
+  let acceleration: number = 1;
+  let textAcceleration: number = 1;
+  let animationInProgress: boolean = false;
+
+  const hover = (): void => {
+    const img: HTMLElement = imageRef.current as HTMLElement;
+    const text: HTMLElement = textRef.current as HTMLElement;
 
     ticks++;
     acceleration += 0.02;
-    textAcceleration += 0.0035;
+    textAcceleration += 0.01;
 
     animationInProgress = true;
     if (ticks < 35) {
@@ -47,9 +53,9 @@ const ContactsButton = ({
     }
   };
 
-  const leave = () => {
-    const img = imageRef.current as HTMLElement;
-    const text = textRef.current as HTMLElement;
+  const leave = (): void => {
+    const img: HTMLElement = imageRef.current as HTMLElement;
+    const text: HTMLElement = textRef.current as HTMLElement;
     acceleration = 1;
     textAcceleration = 1;
 
@@ -64,19 +70,20 @@ const ContactsButton = ({
     }
   };
 
-  const click = () => {
-    const img = imageRef.current as HTMLElement;
-    const text = textRef.current as HTMLElement;
+  const click = (): void => {
+    const img: HTMLElement = imageRef.current as HTMLElement;
+    const text: HTMLElement = textRef.current as HTMLElement;
 
     ticks++;
-    acceleration += 0.2;
+    acceleration += 0.05;
     animationInProgress = true;
-    if (ticks < 50) {
+    if (ticks < 80) {
       img.style.transform = `translate(${ticks * acceleration}px, -${
         ticks * acceleration
       }px)`;
-      img.style.width = `calc(${img.style.width} -7px)`;
-      img.style.height = `calc(${img.style.height} - 7px)`;
+      img.style.width = `calc(${img.style.width} - 2px)`;
+      img.style.height = `calc(${img.style.height} - 2px)`;
+
       text.style.transform = "";
       window.requestAnimationFrame(click);
     } else {
@@ -86,10 +93,12 @@ const ContactsButton = ({
   };
 
   return (
-    <div className={`contacts__btn ${!isTouchedForm ? "isDone" : ""}`}>
+    <div
+      className={`contacts__btn ${isClicked ? "contacts__btn--isDone" : ""}`}
+    >
       <div
-        onMouseEnter={() => {
-          if (animationInProgress) {
+        onMouseEnter={(): void => {
+          if (isClicked || animationInProgress) {
             return;
           }
           ticks = 0;
@@ -98,32 +107,30 @@ const ContactsButton = ({
           animationInProgress = false;
           hover();
         }}
-        onMouseLeave={() => {
+        onMouseLeave={(): void => {
+          if (isClicked) return;
           ticks = 35;
           leave();
         }}
-        onClick={() => {
-          if (dirty && isValid) {
+        onClick={(): void => {
+          if ((dirty && isValid) || isClicked) {
             acceleration = 1;
             textAcceleration = 1;
             click();
+            setIsClicked(true);
           }
           action();
         }}
       >
-        {isTouchedForm ? (
-          <img
-            src={plane}
-            alt=""
-            ref={imageRef}
-            style={{ width: "55.38px", height: "40px" }}
-          />
-        ) : (
-          ""
-        )}
+        <img
+          src={plane}
+          alt=""
+          ref={imageRef}
+          style={{ width: "55.38px", height: "40px" }}
+        />
 
         <p ref={textRef}>
-          {isTouchedForm ? "Отправить" : "Ваше сообщение отправлено!"}
+          {!isClicked ? "Отправить" : "Ваше сообщение отправлено!"}
         </p>
       </div>
     </div>

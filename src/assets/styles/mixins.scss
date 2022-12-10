@@ -1,11 +1,5 @@
 @import "assets/styles/screen.scss";
 
-@mixin zero {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
 @mixin logo {
   font-weight: 800;
   font-size: 40px;
@@ -38,7 +32,7 @@
   }
 }
 
-@mixin bitTitel {
+@mixin bigTitel {
   font-weight: 700;
   font-size: 80px;
   line-height: 120px;

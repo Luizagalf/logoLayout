@@ -2,7 +2,7 @@
 
 .contacts {
   & > h1 {
-    @include bitTitel;
+    @include bigTitel;
   }
   & > p {
     max-width: 542px;

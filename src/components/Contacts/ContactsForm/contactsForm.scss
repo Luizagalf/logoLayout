@@ -1,25 +1,84 @@
 @import "src/assets/styles/main.scss";
 
-.contacts__form {
+.form {
   display: flex;
   flex-wrap: wrap;
   column-gap: 174px;
   row-gap: 62px;
   padding-top: 120px;
-}
 
-.contacts__form__main {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  width: calc(60% + 10px);
-  height: 300px;
-
-  & > div:first-child {
+  &__main {
     display: flex;
-    justify-content: space-between;
-    row-gap: 60px;
-    column-gap: 20px;
+    flex-direction: column;
+    gap: 60px;
+    width: calc(60% + 10px);
+    height: 300px;
+
+    & > div:first-child {
+      display: flex;
+      justify-content: space-between;
+      row-gap: 60px;
+      column-gap: 20px;
+    }
+  }
+
+  &__input {
+    &--radio {
+      display: flex;
+      align-items: center;
+
+      & > div > input {
+        position: relative;
+        display: grid;
+        place-content: center;
+
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+
+        width: 30px;
+        height: 30px;
+        border: 1px solid #d3d3d3;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:checked {
+          &::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background: $blue;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      & > label {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        color: $darkGray;
+        padding-left: 15px;
+
+        & > a {
+          text-decoration: none;
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  &__label,
+  &___placeholder {
+    font-size: 26px;
+    line-height: 31px;
+    font-weight: 300;
+    color: $lightGray;
+
+    & > mark {
+      color: red;
+      background-color: transparent;
+    }
   }
 }
 
@@ -56,97 +115,44 @@
   margin-top: -10px !important;
 }
 
-.input__label,
-.input__placeholder {
-  font-weight: 300;
-  color: $lightGray;
-
-  & > mark {
-    color: red;
-    background-color: transparent;
-  }
-}
-
-.input__label {
-  font-size: 26px;
-  line-height: 31px;
-}
-
-.input__placeholder {
-  font-size: 26px;
-  line-height: 31px;
-}
-
-.input__radio {
-  display: flex;
-  align-items: center;
-
-  & > div > input {
-    position: relative;
-    display: grid;
-    place-content: center;
-
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-
-    width: 30px;
-    height: 30px;
-    border: 1px solid #d3d3d3;
-    border-radius: 50%;
-    cursor: pointer;
-
-    &:checked {
-      &::after {
-        content: "";
-        width: 10px;
-        height: 10px;
-        background: $blue;
-        border-radius: 50%;
-      }
-    }
-  }
-
-  & > label {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
-    color: $darkGray;
-    padding-left: 20px;
-
-    & > a {
-      text-decoration: none;
-      color: $blue;
-    }
-  }
-}
-
 @media screen and (max-width: 1443px) {
-  .contacts__form__main {
-    height: 100%;
-    width: 100%;
-  }
-
-  .contacts__form {
+  .form {
     padding-top: 100px;
+
+    &__main {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 
 @media screen and (max-width: $phone) {
-  .contacts__form__main {
-    height: 100%;
-    width: 100%;
+  .form {
+    padding-top: 60px;
 
-    & > div:first-child {
-      flex-direction: column;
+    &__main {
+      height: 100%;
+      width: 100%;
+
+      & > div:first-child {
+        flex-direction: column;
+      }
+    }
+
+    &__label,
+    &___placeholder {
+      font-size: 20px;
+      line-height: 20px;
+      color: $lightGray;
+
+      & > mark {
+        color: red;
+        background-color: transparent;
+      }
     }
   }
 
   .form-floating {
     width: 100%;
-  }
-
-  .contacts__form {
-    padding-top: 80px;
   }
 }
